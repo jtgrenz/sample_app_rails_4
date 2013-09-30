@@ -9,11 +9,13 @@ gem 'pg', '0.15.1'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
+#turned off cuz I dont want it  gem 'guard-rspec', '2.5.0'
 end
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+ #need to purchase on AppStore. No thanks gem 'growl' '1.0.3'
 end
 
 # Use SCSS for stylesheets
