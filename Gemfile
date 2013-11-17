@@ -11,7 +11,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
-#turned off cuz I dont want it  gem 'guard-rspec', '2.5.0'
+	#turned off cuz I dont want it  gem 'guard-rspec', '2.5.0'
 end
 
 group :test do
