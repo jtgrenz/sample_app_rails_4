@@ -5,6 +5,14 @@
 
 $grayMediumLight: #eaeaea;
 
+/* minins, variables, etc. */
+
+@mixin box_sizing {
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+}
+
 /* universal */
 
 html {
@@ -105,4 +113,14 @@ footer {
 				float: left;
 				margin-left: 10px;
 	}
+}
+
+/* miscellaneous */
+
+.debug-dump {
+				clear: both;
+				float: left;
+				width: 100%;
+				margin-top: 145px;
+				@include box_sizing;
 }
