@@ -25,6 +25,7 @@ group :test do
   gem 'capybara', '2.1.0'
 	gem 'factory_girl_rails', '4.2.1'
 	gem 'sqlite3'
+	gem 'database_cleaner', github: 'bmabey/database_cleaner'
  	#need to purchase on AppStore. No thanks gem 'growl' '1.0.3'
 end
 
