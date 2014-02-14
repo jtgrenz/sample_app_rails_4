@@ -7,6 +7,7 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
 //
+<<<<<<< HEAD
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
@@ -14,4 +15,13 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+=======
+// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
+// GO AFTER THE REQUIRES BELOW.
+//
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require bootstrap
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
 //= require_tree .

@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140112062648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+=======
+ActiveRecord::Schema.define(version: 20130315230445) do
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -23,7 +27,11 @@ ActiveRecord::Schema.define(version: 20140112062648) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
+=======
+  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -32,9 +40,15 @@ ActiveRecord::Schema.define(version: 20140112062648) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+=======
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -43,10 +57,18 @@ ActiveRecord::Schema.define(version: 20140112062648) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+<<<<<<< HEAD
     t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+=======
+    t.boolean  "admin"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
 
 end

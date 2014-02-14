@@ -60,20 +60,40 @@ describe "User pages" do
     it { should have_content(user.name) }
     it { should have_title(user.name) }
 
+<<<<<<< HEAD
+=======
+    describe "microposts" do
+      it { should have_content(m1.content) }
+      it { should have_content(m2.content) }
+      it { should have_content(user.microposts.count) }
+    end
+
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
     describe "follow/unfollow buttons" do
       let(:other_user) { FactoryGirl.create(:user) }
       before { sign_in user }
 
+<<<<<<< HEAD
       describe "following a user" do 
          before { visit user_path(other_user) }
 
          it "should increment the followed user count" do
+=======
+      describe "following a user" do
+        before { visit user_path(other_user) }
+
+        it "should increment the followed user count" do
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
           expect do
             click_button "Follow"
           end.to change(user.followed_users, :count).by(1)
         end
 
+<<<<<<< HEAD
         it "should incredemnt the other user's followers count" do
+=======
+        it "should increment the other user's followers count" do
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
           expect do
             click_button "Follow"
           end.to change(other_user.followers, :count).by(1)
@@ -91,18 +111,32 @@ describe "User pages" do
           visit user_path(other_user)
         end
 
+<<<<<<< HEAD
+=======
+        it "should decrement the followed user count" do
+          expect do
+            click_button "Unfollow"
+          end.to change(user.followed_users, :count).by(-1)
+        end
+
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
         it "should decrement the other user's followers count" do
           expect do
             click_button "Unfollow"
           end.to change(other_user.followers, :count).by(-1)
         end
 
+<<<<<<< HEAD
         describe "togling the button" do 
+=======
+        describe "toggling the button" do
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
           before { click_button "Unfollow" }
           it { should have_xpath("//input[@value='Follow']") }
         end
       end
     end
+<<<<<<< HEAD
 
 
 
@@ -112,13 +146,20 @@ describe "User pages" do
       it { should have_content(m2.content) }
       it { should have_content(user.microposts.count) }
     end
+=======
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
   end
 
   describe "signup page" do
     before { visit signup_path }
 
+<<<<<<< HEAD
     it { should have_content('Sign Up') }
     it { should have_title(full_title('Sign Up')) }
+=======
+    it { should have_content('Sign up') }
+    it { should have_title(full_title('Sign up')) }
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
   end
 
   describe "signup" do
@@ -169,6 +210,7 @@ describe "User pages" do
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
 
+<<<<<<< HEAD
     describe "forbidden attributes" do
     	let (:params) do
     		{ user: { admin: true, password: user.password,
@@ -185,6 +227,10 @@ describe "User pages" do
 
     describe "with invalid information" do
       before { click_button "Save Changes" }
+=======
+    describe "with invalid information" do
+      before { click_button "Save changes" }
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
 
       it { should have_content('error') }
     end
@@ -197,7 +243,11 @@ describe "User pages" do
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
         fill_in "Confirm Password", with: user.password
+<<<<<<< HEAD
         click_button "Save Changes"
+=======
+        click_button "Save changes"
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
       end
 
       it { should have_title(new_name) }
@@ -206,9 +256,27 @@ describe "User pages" do
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
+<<<<<<< HEAD
   end
 
  describe "following/followers" do
+=======
+
+    describe "forbidden attributes" do
+      let(:params) do
+        { user: { admin: true, password: user.password,
+                  password_confirmation: user.password } }
+      end
+      before do
+        sign_in user, no_capybara: true
+        patch user_path(user), params
+      end
+      specify { expect(user.reload).not_to be_admin }
+    end
+  end
+
+  describe "following/followers" do
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
     let(:user) { FactoryGirl.create(:user) }
     let(:other_user) { FactoryGirl.create(:user) }
     before { user.follow!(other_user) }
@@ -235,6 +303,10 @@ describe "User pages" do
       it { should have_link(user.name, href: user_path(user)) }
     end
   end
+<<<<<<< HEAD
 
 end
 
+=======
+end
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba

@@ -1,6 +1,7 @@
 # Ignore bundler config.
 /.bundle
 
+<<<<<<< HEAD
 # # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -10,6 +11,17 @@
 /tmp
 
 # # Ignore other unneeded files.
+=======
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore other unneeded files.
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
 database.yml
 doc/
 *.swp
@@ -17,4 +29,10 @@ doc/
 .project
 .DS_Store
 .idea
+<<<<<<< HEAD
 .secret
+=======
+.rvmrc
+.ruby-*
+.secret
+>>>>>>> 7a4ab8fb42ad8330c565974e3561a9714f3594ba
